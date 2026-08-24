@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <rect width="200" height="200" fill="#071322"/>
+    <circle cx="100" cy="78" r="38" fill="none" stroke="#16dcff" stroke-width="6"/>
+    <path d="M55 165 L75 115 L100 105 L125 115 L145 165" fill="none" stroke="#168bff" stroke-width="10"/>
+    <text x="100" y="190" text-anchor="middle" fill="#eef7ff" font-size="24" font-family="sans-serif">KAI</text>
+    </svg>

@@ -1,0 +1,41 @@
+:root{
+  --bg:#050914; --panel:#07111f; --line:#12344a; --cyan:#16dcff;
+  --blue:#168bff; --red:#ff416b; --white:#eef7ff; --muted:#8fa5b8;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif}
+body{overflow-x:hidden}
+button{font:inherit}
+#app{width:min(100%,900px);margin:0 auto;min-height:100vh;background:
+  linear-gradient(rgba(16,45,67,.16) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(16,45,67,.16) 1px,transparent 1px),
+  radial-gradient(circle at 50% 20%,rgba(0,155,255,.12),transparent 38%),
+  var(--bg);background-size:52px 52px,52px 52px,auto,auto;padding-bottom:28px}
+.hud{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);background:rgba(3,12,24,.92);position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+.fighter{display:flex;gap:8px;align-items:center;min-width:0}.fighter.enemy{justify-content:flex-end;text-align:right}
+.portrait{width:46px;height:46px;object-fit:cover;border:1px solid var(--cyan);background:#091322}
+.name{font-weight:900;letter-spacing:.16em}.small{font-size:11px;color:var(--muted);margin-top:3px}
+.hp{width:120px;height:7px;border:1px solid #21425a;background:#0a1725;margin-top:5px}.hp span{display:block;height:100%;width:100%;background:linear-gradient(90deg,#15d8ff,#1787ff);transition:.25s}.hp.red span{background:linear-gradient(90deg,#ff315f,#ff735b)}
+.turn{font-size:13px;font-weight:900;color:var(--cyan);letter-spacing:.18em;white-space:nowrap}
+main{padding:10px}
+.battle-panel,.chip-panel,.info-panel{border:1px solid var(--line);background:rgba(4,13,25,.84);box-shadow:0 0 30px rgba(0,190,255,.05);margin-bottom:10px}
+.status-line,.panel-title{padding:9px 12px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.18em;color:var(--cyan);font-weight:900}
+.panel-title span{float:right;color:#fff}
+.field{width:min(100%,560px);margin:18px auto;display:grid;grid-template-columns:repeat(5,1fr);gap:3px;aspect-ratio:1}
+.cell{position:relative;border:1px solid #0b3449;background:rgba(6,25,40,.8);min-width:0;touch-action:manipulation}
+.cell.player{background:linear-gradient(145deg,rgba(0,136,255,.28),rgba(0,49,95,.2));box-shadow:inset 0 0 18px rgba(0,200,255,.12)}
+.cell.enemy{background:linear-gradient(145deg,rgba(255,20,80,.3),rgba(85,0,30,.2));box-shadow:inset 0 0 18px rgba(255,30,90,.13);cursor:pointer}
+.cell.target{outline:2px solid var(--cyan);box-shadow:0 0 20px rgba(0,220,255,.45)}
+.unit{position:absolute;inset:9%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:clamp(10px,3vw,16px);text-shadow:0 0 10px currentColor}
+.unit img{width:100%;height:100%;object-fit:contain;image-rendering:auto}
+.unit.player{color:var(--cyan)}.unit.enemy{color:var(--red)}
+.battle-message{text-align:center;padding:0 10px 14px;color:var(--muted);font-size:13px}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px}
+.chip{min-height:78px;border:1px solid #183a52;background:#071322;color:#dcecff;padding:9px;text-align:left;cursor:pointer;touch-action:manipulation}
+.chip.selected{border-color:var(--cyan);box-shadow:0 0 18px rgba(0,220,255,.22);background:linear-gradient(145deg,#09243a,#071322)}
+.chip .icon{font-size:24px;margin-bottom:3px}.chip .chip-name{font-weight:900;font-size:13px}.chip .chip-desc{font-size:10px;color:var(--muted);margin-top:3px}
+.log{padding:12px;min-height:70px;color:#b9cada;font-size:12px;line-height:1.7}
+.result{position:fixed;inset:0;z-index:20;background:rgba(3,8,17,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center}
+.hidden{display:none}.result-kicker{color:var(--cyan);font-weight:900;letter-spacing:.28em}.result-title{font-size:64px;font-weight:1000;letter-spacing:.08em;margin:12px 0}.result-sub{color:#9aacbc;margin-bottom:38px}
+.result button{width:min(100%,330px);min-height:56px;margin:6px;border:1px solid var(--cyan);background:transparent;color:white;font-weight:900;letter-spacing:.12em}.result .primary{box-shadow:0 0 22px rgba(0,220,255,.15)}.result .secondary{border-color:#2c3a49;color:#a9b7c4}
+@media(min-width:700px){.chips{grid-template-columns:repeat(6,1fr)}.chip{min-height:100px}.field{margin-top:22px}}

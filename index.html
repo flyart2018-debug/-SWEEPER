@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050914">
+  <title>SWEEPER</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="app">
+  <header class="hud">
+    <div class="fighter">
+      <img id="playerPortrait" class="portrait" src="./ren-idle.svg" alt="">
+      <div>
+        <div class="name" id="playerName">REN</div>
+        <div class="hp"><span id="playerHpBar"></span></div>
+        <div class="small" id="playerHpText">HP 100 / 100</div>
+      </div>
+    </div>
+    <div class="turn" id="turnText">TURN 01</div>
+    <div class="fighter enemy">
+      <div>
+        <div class="name">CPU</div>
+        <div class="hp red"><span id="enemyHpBar"></span></div>
+        <div class="small" id="enemyHpText">HP 100 / 100</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="battle-panel">
+      <div class="status-line">REALTIME BATTLE // ONLINE</div>
+      <div id="field" class="field" aria-label="battle field"></div>
+      <div id="message" class="battle-message">チップを選択 → 敵をタップ</div>
+    </section>
+
+    <section class="chip-panel">
+      <div class="panel-title">CHIP SELECT <span id="selectedLabel">NO CHIP</span></div>
+      <div id="chips" class="chips"></div>
+    </section>
+
+    <section class="info-panel">
+      <div class="panel-title">BATTLE LOG</div>
+      <div id="log" class="log">バトル開始。</div>
+    </section>
+  </main>
+
+  <div id="result" class="result hidden">
+    <div class="result-kicker">BATTLE RESULT</div>
+    <div id="resultTitle" class="result-title">DEFEAT</div>
+    <div class="result-sub">SWEEPER SYSTEM OFFLINE.</div>
+    <button id="rematch" class="primary">REMATCH</button>
+    <button id="titleBtn" class="secondary">TITLE</button>
+  </div>
+</div>
+<script src="./game.js"></script>
+</body>
+</html>
